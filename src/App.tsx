@@ -9,6 +9,9 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const options = {
+      enableHighAccuracy: true,
+    };
     // checks if the geolocation API is available in the browser + error handling if not
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -20,7 +23,8 @@ function App() {
         },
         (error) => {
           setError(error.message);
-        }
+        },
+        options
       );
     } else {
       setError('Geolocation is not supported by this browser.');
