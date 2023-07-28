@@ -1,0 +1,32 @@
+.restaurant-label {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.select-dropdown {
+  font-size: 12px;
+  height: 36px;
+  width: 200px;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("../src/assets/expand.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+  color: #E0E0E0;
+  font-family: 'Inter', sans-serif;
+}
