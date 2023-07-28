@@ -6,7 +6,7 @@ const Map = ({coords}) => {
     return(
         <div className="map-container">
             <GoogleMapReact
-                bootstrapURLKeys={{key: ''}}
+                bootstrapURLKeys={{key: import.meta.env.VITE_G_MAPS_API_KEY }}
                 defaultCenter = {coords}
                 center = {coords}
                 defaultZoom = {15}
