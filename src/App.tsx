@@ -43,7 +43,7 @@ function App() {
             <Map coords={coords} />
           ) : (
             <div>
-              <span className = 'spinner'></span>
+              <span className="spinner"></span>
               <p>Loading location </p>
               <p>{error}</p>
             </div>
