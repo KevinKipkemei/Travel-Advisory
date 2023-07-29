@@ -1,16 +1,8 @@
 import './List.css';
+import { useState, useEffect } from 'react';
 
-const List = () => {
-  const places = [
-    { name: 'Beef Stake House' },
-    { name: 'Stake House' },
-    { name: 'BeeStake House' },
-    { name: 'Beef Stke House' },
-    { name: 'Beef Stake House' },
-    { name: 'Stake House' },
-    { name: 'BeeStake House' },
-    { name: 'Beef Stke House' },
-  ];
+
+const List = ({places}) => {
   return (
     <div>
       <h4>Restaurants, Hotels and Attractions Around You</h4>
@@ -33,6 +25,14 @@ const List = () => {
           </select>
         </div>
       </div>
+      {
+        places?.map((element, index) => (
+          <div key = {index}>
+            <p>{element.name}</p>
+            <p> Rating: {element.rating}</p>
+          </div>
+        ))
+      }
     </div>
   );
 };

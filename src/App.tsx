@@ -3,10 +3,13 @@ import './App.css';
 import Map from './components/Map/Map';
 import List from './components/List/List';
 import Navbar from './components/Navbar/Navbar';
+import {getPlaces} from './api/apiCalls'
 
 function App() {
   const [coords, setCoords] = useState({});
   const [error, setError] = useState('');
+  const [places, setPlaces] = useState([]);
+  const [boundaries, setBoundaries] = useState({})
 
   useEffect(() => {
     const options = {
@@ -31,16 +34,22 @@ function App() {
     }
   }, []);
 
+  
+  useEffect(() => {
+    console.log(coords, boundaries)
+    getPlaces(boundaries.sw, boundaries.ne).then((data) => {setPlaces(data)});
+  }, [coords, boundaries]);
+
   return (
     <div>
       <Navbar />
       <div className="landing-page">
         <div className="filters-section">
-          <List />
+          <List places = {places}/>
         </div>
         <div className="map-section">
           {Object.keys(coords).length > 0 ? (
-            <Map coords={coords} />
+            <Map coords={coords} setBoundaries = {setBoundaries}/>
           ) : (
             <div>
               <span className="spinner"></span>
