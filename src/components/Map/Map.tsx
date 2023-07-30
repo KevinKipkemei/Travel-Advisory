@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Map.css'
 import GoogleMapReact from 'google-map-react'
 
-const Map = ({coords}) => {
+const Map = ({coords, setBoundaries}) => {
     return(
         <div className="map-container">
             <GoogleMapReact
@@ -11,6 +11,9 @@ const Map = ({coords}) => {
                 center = {coords}
                 defaultZoom = {15}
                 margin = {[50,50,50,50]}
+                onChange = {(e) => setBoundaries(
+                    {ne: e.marginBounds.ne, sw: e.marginBounds.sw}
+                )}
             >
             </GoogleMapReact>
         </div>
