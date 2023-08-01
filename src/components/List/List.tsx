@@ -2,7 +2,7 @@ import './List.css';
 import { useState, useEffect } from 'react';
 
 
-const List = ({places, setType}) => {
+const List = ({places, type, setType}) => {
 
   const handleClick = (event : React.ChangeEvent<HTMLSelectElement>) => {
     setType(event.target.value)
@@ -13,7 +13,7 @@ const List = ({places, setType}) => {
       <div className="page">
         <div className="container">
           <label className="restaurant-label">Select an option</label>
-          <select className="select-dropdown" onChange = {handleClick}>
+          <select className="select-dropdown" value = {type} onChange = {handleClick}>
             <option value={'restaurants'}>Restaurants</option>
             <option value={'attractions'}>Attractions</option>
             <option value={'hotels'}>Hotels</option>
