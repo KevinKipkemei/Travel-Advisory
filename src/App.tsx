@@ -10,6 +10,7 @@ function App() {
   const [error, setError] = useState('');
   const [places, setPlaces] = useState([]);
   const [boundaries, setBoundaries] = useState({})
+  const [type, setType] = useState('restaurants')
 
   useEffect(() => {
     const options = {
@@ -37,15 +38,17 @@ function App() {
   
   useEffect(() => {
     console.log(coords, boundaries)
-    getPlaces(boundaries.sw, boundaries.ne).then((data) => {setPlaces(data)});
+    getPlaces(type, boundaries.sw, boundaries.ne).then((data) => {setPlaces(data)});
   }, [coords, boundaries]);
+
+  console.log(places)
 
   return (
     <div>
       <Navbar />
       <div className="landing-page">
         <div className="filters-section">
-          <List places = {places}/>
+          <List places = {places} type = {type} setType = {setType}/>
         </div>
         <div className="map-section">
           {Object.keys(coords).length > 0 ? (

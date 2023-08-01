@@ -2,14 +2,18 @@ import './List.css';
 import { useState, useEffect } from 'react';
 
 
-const List = ({places}) => {
+const List = ({places, setType}) => {
+
+  const handleClick = (event : React.ChangeEvent<HTMLSelectElement>) => {
+    setType(event.target.value)
+  }
   return (
     <div>
       <h4>Restaurants, Hotels and Attractions Around You</h4>
       <div className="page">
         <div className="container">
           <label className="restaurant-label">Select an option</label>
-          <select className="select-dropdown">
+          <select className="select-dropdown" onChange = {handleClick}>
             <option value={'restaurants'}>Restaurants</option>
             <option value={'attractions'}>Attractions</option>
             <option value={'hotels'}>Hotels</option>
