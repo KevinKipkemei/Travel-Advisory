@@ -30,3 +30,8 @@
   color: #e0e0e0;
   font-family: 'Inter', sans-serif;
 }
+
+.resultscards{
+  overflow-y: auto;
+  height: 80vh;
+}

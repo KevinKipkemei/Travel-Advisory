@@ -1,0 +1,43 @@
+.cardimage{
+  background-color: blue;
+  height: 250px;
+  border-radius: 10px;
+}
+.cuisine{
+  font-weight: 300;
+}
+
+.cuisineslist{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card{
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.ranking{
+  font-size: 10px;
+  margin-top: 0px;
+}
+
+.rankingdetails{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pricedetails{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

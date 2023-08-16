@@ -1,5 +1,6 @@
 import './List.css';
 import { useState, useEffect } from 'react';
+import Card from '../Card/Card'
 
 
 const List = ({places, type, setType}) => {
@@ -29,14 +30,15 @@ const List = ({places, type, setType}) => {
           </select>
         </div>
       </div>
+      <div className = 'resultscards'>
       {
         places?.map((element, index) => (
           <div key = {index}>
-            <p>{element.name}</p>
-            <p> Rating: {element.rating}</p>
+            <Card element = {element}/>
           </div>
         ))
       }
+      </div>
     </div>
   );
 };
