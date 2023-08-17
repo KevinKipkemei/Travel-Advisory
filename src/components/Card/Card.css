@@ -1,5 +1,4 @@
 .cardimage{
-  background-color: blue;
   height: 250px;
   border-radius: 10px;
 }
@@ -7,6 +6,11 @@
   font-weight: 300;
 }
 
+.image{
+  height: 250px;
+  width: 400px;
+  border-radius: 10px;
+}
 .cuisineslist{
   display: flex;
   flex-direction: row;
