@@ -1,20 +1,23 @@
 import './List.css';
 import { useState, useEffect } from 'react';
-import Card from '../Card/Card'
+import Card from '../Card/Card';
 
-
-const List = ({places, type, setType}) => {
-
-  const handleClick = (event : React.ChangeEvent<HTMLSelectElement>) => {
-    setType(event.target.value)
-  }
+const List = ({ places, type, setType, loading, setLoading }) => {
+  const handleClick = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setType(event.target.value);
+    setLoading(true)
+  };
   return (
     <div>
       <h4>Restaurants, Hotels and Attractions Around You</h4>
       <div className="page">
         <div className="container">
           <label className="restaurant-label">Select an option</label>
-          <select className="select-dropdown" value = {type} onChange = {handleClick}>
+          <select
+            className="select-dropdown"
+            value={type}
+            onChange={handleClick}
+          >
             <option value={'restaurants'}>Restaurants</option>
             <option value={'attractions'}>Attractions</option>
             <option value={'hotels'}>Hotels</option>
@@ -30,15 +33,20 @@ const List = ({places, type, setType}) => {
           </select>
         </div>
       </div>
-      <div className = 'resultscards'>
-      {
-        places?.map((element, index) => (
-          <div key = {index}>
-            <Card element = {element}/>
-          </div>
-        ))
-      }
-      </div>
+      {!loading ? (
+        <div className="resultscards">
+          {places?.map((element, index) => (
+            <div key={index}>
+              <Card element={element} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="loadingcontainer">
+          <span className="spinner"></span>
+          <p> Loading {type}</p>
+        </div>
+      )}
     </div>
   );
 };

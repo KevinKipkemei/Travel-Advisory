@@ -14,6 +14,13 @@
   margin-right: 10px;
 }
 
+.loadingcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .select-dropdown {
   font-size: 12px;
   height: 36px;
@@ -31,7 +38,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-.resultscards{
+.resultscards {
   overflow-y: auto;
   height: 80vh;
 }

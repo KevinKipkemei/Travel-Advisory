@@ -16,9 +16,7 @@ export const getPlaces = async (type, sw, ne) => {
     },
   };
   try {
-    const {
-      data: { data },
-    } = await axios.request(options);
+    const {data: { data }} = await axios.request(options);
     return data;
   } catch (error) {
     console.log(error);
