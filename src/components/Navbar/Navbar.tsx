@@ -1,5 +1,5 @@
 import './Navbar.css'
-// import { Autocomplete } from '@react-google-maps/api';
+import { Autocomplete } from '@react-google-maps/api';
 
 const Navbar = () => {
     return(

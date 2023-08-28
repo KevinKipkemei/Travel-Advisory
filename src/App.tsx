@@ -52,7 +52,7 @@ function App() {
         </div>
         <div className="map-section">
           {Object.keys(coords).length > 0 ? (
-            <Map coords={coords} setBoundaries = {setBoundaries}/>
+            <Map coords={coords} setBoundaries = {setBoundaries} places = {places}/>
           ) : (
             <div>
               <span className="spinner"></span>

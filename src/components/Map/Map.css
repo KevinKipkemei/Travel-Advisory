@@ -2,3 +2,9 @@
   height: 90vh;
   width: 100%;
 }
+
+.locationmarker{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
